@@ -1,6 +1,5 @@
 package com.example.buscacep
 
-import android.content.Context
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -22,7 +21,7 @@ class RetrofitConfig {
 
     fun makeRetrofit(): Retrofit? {
         return Retrofit.Builder() // classe resp. por construir objeto do tipo Retrofit
-            .baseUrl("http://ws.matheuscastiglioni.com.br/ws/")
+            .baseUrl("https://viacep.com.br/ws/")
             .addConverterFactory(GsonConverterFactory.create()) // configurado o conversor
             .build() // construindo objeto da classe Retrofit
     }
