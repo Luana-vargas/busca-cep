@@ -44,8 +44,8 @@ class MainActivity : AppCompatActivity() {
                     var cep: Cep? = response.body()
                   //txt_logradouro.text = cep.logradouro
 
-                    etMain_resposta.text =
-                        "${cep?.logradouro} / ${cep?.bairro} / ${cep?.localidade}"
+                    txt_resposta.text =
+                        "Cidade: ${cep?.localidade}\nBairro: ${cep?.bairro}\nLogradouro: ${cep?.logradouro}"
 
                 }
             }
