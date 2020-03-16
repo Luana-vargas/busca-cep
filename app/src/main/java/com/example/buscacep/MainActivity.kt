@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         var CEPService: CEPService =
             retrofit!!.create(CEPService::class.java)
 
-        var call: Call<Cep> = CEPService.buscarCEP(etMain_cep.text.toString())
+        var call: Call<Cep> = CEPService.buscarCEP(edt_cep.text.toString())
 
 
         //metodo enqueue recebe uma classe anonima do tipo callback

@@ -1,46 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF"
     android:orientation="vertical"
-    android:padding="50dp"
-    android:layout_width="match_parent">
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
     <EditText
+        android:id="@+id/edt_cep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
         android:digits="0123456789"
-        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:hint="CEP"
-        android:id="@+id/etMain_cep"
-        android:textColor="#595959"
-        android:textSize="25sp"
+        android:backgroundTint="#15082F"
         android:inputType="number"
-        android:layout_width="match_parent"/>
-
-    <LinearLayout
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_width="match_parent">
-
-        <Button
-            android:background="@color/colorPrimary"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnMain_buscarCep"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp"
-            android:text="Buscar CEP"
-            android:textColor="#FDFDFD"
-            android:textSize="22sp"
-            android:layout_width="wrap_content"/>
-
-    </LinearLayout>
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
-        android:layout_height="match_parent"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="15082F"
+        android:gravity="center_horizontal"
+        android:text="Digite o CEP para a busca:"
+        android:textColor="#15082F"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
         android:id="@+id/etMain_resposta"
+
+        android:layout_width="80dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="47dp"
         android:textColor="#595959"
         android:textSize="20sp"
-        android:layout_width="match_parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMain_buscarCep" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btnMain_buscarCep"
+        android:layout_width="285dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="47dp"
+        android:background="@drawable/botao_customizado"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="Encontrar CEP"
+        android:textColor="#FDFDFD"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/etMain_resposta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_cep" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
