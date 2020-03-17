@@ -38,8 +38,8 @@
 
     <Button
         android:id="@+id/btnMain_buscarCep"
-        android:layout_width="285dp"
-        android:layout_height="46dp"
+        android:layout_width="232dp"
+        android:layout_height="47dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/botao_customizado"
         android:gravity="center_horizontal"
