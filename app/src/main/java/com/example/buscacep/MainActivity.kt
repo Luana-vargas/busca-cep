@@ -3,6 +3,8 @@ package com.example.buscacep
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
+import android.view.inputmethod.EditorInfo
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -19,8 +21,23 @@ class MainActivity : AppCompatActivity() {
 
         retrofit = RetrofitConfig.getInstance().makeRetrofit()
 
+        edt_cep.addTextChangedListener(Mask.custom("#####-###", edt_cep))
+
+        edt_cep.setOnEditorActionListener { v, actionId, event ->
+
+            if ( actionId == EditorInfo.IME_ACTION_DONE ||
+                event.action == KeyEvent.ACTION_DOWN &&
+                event.keyCode == KeyEvent.KEYCODE_ENTER){
+                acessarCep()
+                v.hideKeyboard()
+                true
+            }
+            false
+        }
+
         btnMain_buscarCep.setOnClickListener {
             acessarCep()
+            it.hideKeyboard()
         }
 
     }
