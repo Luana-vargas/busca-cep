@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                   //txt_logradouro.text = cep.logradouro
 
                     txt_resposta.text =
-                        "Cidade: ${cep?.localidade}\nBairro: ${cep?.bairro}\nLogradouro: ${cep?.logradouro}"
+                        "Logradouro: ${cep?.logradouro}\nBairro: ${cep?.bairro}\nCidade: ${cep?.localidade}"
 
                 }
             }
